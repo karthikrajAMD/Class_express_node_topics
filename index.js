@@ -101,10 +101,10 @@ app.put("/movies/:id", async (req, res) => {
     .collection("movies")
     .updateOne({ id: id }, { $set: updateMovie });
 
-  res.send(update);
-  // updateMovie
-  //   ? res.send(update)
-  //   : res.status(404).send({ message: "Nothing on body to update" });
+  // res.send(update);
+  updateMovie
+    ? res.send(update)
+    : res.status(503).send({ message: "Error in server" });
 });
 //.............................................................
 app.listen(PORT, () => {
