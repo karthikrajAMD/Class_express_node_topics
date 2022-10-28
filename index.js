@@ -6,10 +6,10 @@ import express from "express";
 import * as dotenv from "dotenv";
 import { movieRouter } from "./routes/Movies.js";
 import { userRouter } from "./routes/Users.js";
-
+import cors from "cors";
 dotenv.config();
 export const app = express();
-
+app.use(cors());
 const PORT = process.env.PORT;
 
 // mongodb...............
