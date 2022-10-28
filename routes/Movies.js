@@ -23,7 +23,7 @@ router.get("/:id", async (req, res) => {
     : res.status(404).send({ message: "Movie of particular id is not found" });
 });
 // movies with query(using request query)..................
-router.get("/", auth, async (req, res) => {
+router.get("/", async (req, res) => {
   let { name, rating } = req.query;
   if (name || rating) {
     console.log(req.query);
